@@ -13,7 +13,7 @@ function UpperNav() {
                     return(
                         <ul className={`border-l-[1.5px] border-black pl-3 ${i ===0 && 'border-transparent'}`}>
                             <li key={i} >
-                                <Link href={`${i === 3 && "/SignIn"} ${i === 2 && "/JoinUs"}`}>{elem}</Link>
+                                <Link href={`${i === 3 ? "/SignIn" : "/JoinUs"} `}>{elem}</Link>
                             </li>
                         </ul>
                     )

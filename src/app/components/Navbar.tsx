@@ -15,7 +15,10 @@ import {
   } from "@/components/ui/dropdown-menu"
   
 import { Heart } from 'lucide-react';
+
 function Navbar() {
+  let a = 0;
+
   return (
     <>
     <div className="hidden md:block">
@@ -29,7 +32,7 @@ function Navbar() {
             </div>
             <div className=" hidden lg:block ">
             <div className=" gap-8 pt-2 pl-14 flex ">
-                {navLinks.map((elem,i)=>{
+                {navLinks.map((elem:any,i:any)=>{
                     return(
                         <ul className="flex border-transparent">
                             <li key={i} >
@@ -46,13 +49,18 @@ function Navbar() {
                     <div className="w-10  bg-[#f5f5f5] rounded-l-2xl h-10">
                     <Search className="mt-2 ml-1 w-9 h-6 " />
                     </div>
-                    <input type="text"placeholder="Search" className=" focus:outline-none bg-[#f5f5f5] w-24  h-10 rounded-r-2xl"/>
+                    <input type="text"placeholder="Search" className=" focus:outline-none bg-[#f5f5f5] w-24  h-10 rounded-r-2xl "/>
                      </div>
                      <div className="mt-1">
                         <Heart className="w-7 h-[33px]" />
                      </div>
-                     <div className="mt-2">
+                   <div className="bg-red-600 text-white rounded-[50%]  px-[6px] absolute top-2  right-10 z-50 text-sm md:right-16 md:top-11 lg:right-4">
+{a}
+                   </div>
+                     <div className="mt-2 z-10" >
+                      <Link href={"/Cart"}>
                         <ShoppingBag />
+                      </Link>
                      </div>
                      <div className="mt-1 lg:hidden">
             <DropdownMenu>
@@ -61,8 +69,8 @@ function Navbar() {
    
     <DropdownMenuSeparator />
     <DropdownMenuItem>Products</DropdownMenuItem>
-    <DropdownMenuItem><Link href={"/SignIn"}>Sign In</Link></DropdownMenuItem>
-    <DropdownMenuItem>Join Us</DropdownMenuItem>
+    <Link href={"/SignIn"}><DropdownMenuItem>Sign In</DropdownMenuItem></Link>
+    <Link href={"/JoinUs"}><DropdownMenuItem>Join Us</DropdownMenuItem></Link>
     <DropdownMenuItem>Help</DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>

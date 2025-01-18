@@ -8,7 +8,7 @@ function SecLast() {
       <h5>
         Gear Up 
       </h5>
-      <Link href={""} className="mt-10">
+      <Link href={"/Product"} className="mt-10">
       <div className="w-[98%]  ">
         <Image src={"/product.png"}  alt="products"width={4000} height={4000} />
          
@@ -16,7 +16,7 @@ function SecLast() {
       </Link>
       <h5>Don't Miss</h5>
       <div className="mt-5">
-        <Link href={""}>
+        <Link href={"/Product"}>
         <div>
           <Image src={"/seclast.png"} height={4000} width={4000} alt="main "/>
           </div></Link>

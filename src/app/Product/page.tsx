@@ -1,9 +1,31 @@
+import { client } from '@/sanity/lib/client';
 import { product } from '../utilies/page';
 import {  SlidersHorizontal } from 'lucide-react';
 import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
+import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
-function page() {
+ async function page() {
+  type a ={
+desciption:string,
+productName:string,
+inventory:number,
+price:number,
+_id:string,
+category:string,
+status:string,
+image:string
+
+  }
+ 
+  let main = await client.fetch(`*[_type=="product" ]{
+  description,productName,inventory,
+    price,_id,category,status,
+    image
+}
+`)
+console.log(main);
+
   return (
     <div>
       <div className='flex justify-between px-6'>
@@ -21,15 +43,15 @@ function page() {
         </div>
         <div className='w-full md:[70%]  '>
          <div className='flex flex-wrap justify-center items-center gap-5'>
-          {product.map((elem,i)=>{
+          {main.map((elem:a,i:any)=>{
             return(
-              <Link href={`${elem.id}`}>
+              <Link href={`/Product/${elem._id}`} className='hover:shadow-xl cursor-pointer' key={i}>
               <div>
-                <Image src={elem.img} height={300} width={300} alt='products'/>
+                <Image src={urlFor(elem.image)} height={300} width={300} alt='products'/>
               </div>
               <div className='mt-2'>
               <div className='flex justify-between'>
-                <span>{elem.title}</span>
+                <span>{elem.productName}</span>
                 <span>{elem.price}</span>
               </div>
               <div>

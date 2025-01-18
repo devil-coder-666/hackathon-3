@@ -14,10 +14,10 @@ function Footer() {
       
 
 
-      <div className="flex justify-center p-5  items-center bg-black text-white ">
+      <div className="flex justify-center p-5  items-center bg-black text-white text-sm ">
         <div className=" w-[90%]  flex justify-between ">
           <div className="flex justify-center ">
-             <span><MapPin /></span>
+             <span><MapPin className="pb-1 " /></span>
              <h4>Pakiistan</h4>
           </div>
           <div className="flex gap-3">{foot.map((elem,i)=>{
