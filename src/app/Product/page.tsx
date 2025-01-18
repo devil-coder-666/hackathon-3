@@ -24,7 +24,7 @@ image:string
     image
 }
 `)
-console.log(main);
+
 
   return (
     <div>
