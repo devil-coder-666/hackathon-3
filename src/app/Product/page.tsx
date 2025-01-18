@@ -6,17 +6,7 @@ import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
  async function page() {
-  type a ={
-desciption:string,
-productName:string,
-inventory:number,
-price:number,
-_id:string,
-category:string,
-status:string,
-image:string
-
-  }
+ 
  
   let main = await client.fetch(`*[_type=="product" ]{
   description,productName,inventory,
@@ -43,7 +33,7 @@ image:string
         </div>
         <div className='w-full md:[70%]  '>
          <div className='flex flex-wrap justify-center items-center gap-5'>
-          {main.map((elem:a,i:any)=>{
+          {main.map((elem:any,i:any)=>{
             return(
               <Link href={`/Product/${elem._id}`} className='hover:shadow-xl cursor-pointer' key={i}>
               <div>
