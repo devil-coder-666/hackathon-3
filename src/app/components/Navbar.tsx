@@ -34,7 +34,7 @@ function Navbar() {
             <div className=" gap-8 pt-2 pl-14 flex ">
                 {navLinks.map((elem:any,i:any)=>{
                     return(
-                        <ul className="flex border-transparent">
+                        <ul className="flex border-transparent" key={i}>
                             <li key={i} >
                                 <Link href={"/Product"} className="hover:border-b-[1.5px] hover:border-black border-transparent" >{elem}</Link>
                             </li>

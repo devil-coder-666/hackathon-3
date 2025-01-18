@@ -22,7 +22,7 @@ function Footer() {
           </div>
           <div className="flex gap-3">{foot.map((elem,i)=>{
             return(
-                <ul className="hidden md:block">
+                <ul className="hidden md:block" key={i}>
                     <li key={i}>
                         {elem}
                     </li>

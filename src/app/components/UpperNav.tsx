@@ -11,7 +11,7 @@ function UpperNav() {
             <div className="flex gap-6">
                 {upperNavLinks.map((elem,i)=>{
                     return(
-                        <ul className={`border-l-[1.5px] border-black pl-3 ${i ===0 && 'border-transparent'}`}>
+                        <ul key={i}className={`border-l-[1.5px] border-black pl-3 ${i ===0 && 'border-transparent'}`}>
                             <li key={i} >
                                 <Link href={`${i === 3 ? "/SignIn" : "/JoinUs"} `}>{elem}</Link>
                             </li>

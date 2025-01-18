@@ -14,7 +14,7 @@ function SecLast() {
          
       </div>
       </Link>
-      <h5>Don't Miss</h5>
+      <h5>Dont Miss</h5>
       <div className="mt-5">
         <Link href={"/Product"}>
         <div>

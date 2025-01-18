@@ -26,7 +26,7 @@ function Aside() {
       <div className="flex flex-col items-center md:flex-row md:px-4 md:justify-center md:mt-10 ">
         {product.slice(0, 3).map((elem, i) => {
           return (
-            <Link href={"/Product"} className=" md:px-4 ">
+            <Link href={"/Product"} className=" md:px-4 " key={i}>
               <div key={i} className=" flex flex-col  items-center  ">
                 <div>
                   <Image
